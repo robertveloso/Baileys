@@ -34,7 +34,7 @@ export const NOISE_MODE = 'Noise_XX_25519_AESGCM_SHA256\0\0\0\0'
 export const DICT_VERSION = 2
 export const KEY_BUNDLE_TYPE = Buffer.from([5])
 export const NOISE_WA_HEADER = Buffer.from(
-	[ 87, 65, 6, DICT_VERSION ]
+	[87, 65, 6, DICT_VERSION]
 ) // last is "DICT_VERSION"
 export const PROTOCOL_VERSION = [5, 2]
 export const MOBILE_NOISE_HEADER = Buffer.concat([Buffer.from('WA'), Buffer.from(PROTOCOL_VERSION)])
@@ -55,7 +55,7 @@ export const PROCESSABLE_HISTORY_TYPES = [
 
 export const DEFAULT_CONNECTION_CONFIG: SocketConfig = {
 	version: version as WAVersion,
-	browser: Browsers.baileys('Chrome'),
+	browser: Browsers.ubuntu('Chrome'),
 	waWebSocketUrl: 'wss://web.whatsapp.com/ws/chat',
 	connectTimeoutMs: 20_000,
 	keepAliveIntervalMs: 30_000,
@@ -76,12 +76,12 @@ export const DEFAULT_CONNECTION_CONFIG: SocketConfig = {
 	linkPreviewImageThumbnailWidth: 192,
 	transactionOpts: { maxCommitRetries: 10, delayBetweenTriesMs: 3000 },
 	generateHighQualityLinkPreview: false,
-	options: { },
+	options: {},
 	appStateMacVerification: {
 		patch: false,
 		snapshot: false,
 	},
-	getMessage: async() => undefined,
+	getMessage: async () => undefined,
 	makeSignalRepository: makeLibSignalRepository
 }
 
